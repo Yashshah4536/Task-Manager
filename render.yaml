@@ -1,8 +1,8 @@
 tabases:
-  - name: mysitedb
+  - name:db.sqlite3
     plan: free
-    databaseName: mysite
-    user: mysite
+    databaseName: db.sqlite3
+    user: db.sqlite3
 
 services:
   - type: web
