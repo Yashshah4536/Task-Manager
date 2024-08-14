@@ -78,7 +78,7 @@ class Tasks(View):
                 "other_users": users,
                 "tasks": proj.task_set.all(),
                 'proj': proj,
-                "can_add": user == proj.owner
+                "can_add": user == users
                 }
         return render(request, 'tasks.html', data)
 
@@ -116,14 +116,8 @@ class ManegeTasks(View):
             task = Task.objects.filter(id=task_id).first()
 
             if status in ['O', 'B', 'L'] or task.status in ['O', 'B', 'L']:
-                if user == task.project.owner:
                     task.status = status
                     task.save()
-
-                else:
-                    response = JsonResponse({"error": "You Do Not Have Permission"})
-                    response.status_code = 403
-                    return response
             else:
                 if user == task.assigned_to or user == task.project.owner:
                     task.status = status
@@ -149,7 +143,6 @@ class ManegeTasks(View):
             if user == task.project.owner:
                 task.end_time = end_time
                 task.save()
-
                 response = JsonResponse({"message": "OK"})
                 response.status_code = 200
                 return response
