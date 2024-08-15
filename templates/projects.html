@@ -88,8 +88,12 @@
                                 <!--begin::Toolbar-->
                                 <div class="d-flex align-items-center">
                                     <!--begin::Button-->
+                                    <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip"
+                                         title="To Check Your Reports"
+                                         data-placement="top">
                                     <a href="/report"
                                        class="btn btn-white font-weight-bold py-3 px-6 mr-2">Reports</a>
+                                    </div>
                                     <!--end::Button-->
                                     <!--begin::Dropdown-->
                                     <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip"
@@ -100,7 +104,7 @@
                                         <button type="button" class="btn btn-white font-weight-bold py-3 px-6"
                                                 data-toggle="modal"
                                                 data-target="#exampleModal">
-                                            New
+                                            New Team
                                         </button>
 
                                         <!-- Modal-->
@@ -223,13 +227,19 @@
                                                             <!--begin::Navigation-->
                                                             <ul class="navi navi-hover">
                                                                 <li class="navi-item">
-                                                                    <a href="javascript:void(0)"
+                                                                    <!--<a href="javascript:void(0)"
                                                                        id="{{ proj.project.id }}/delete"
                                                                        class="navi-link aff">
 																			<span class="navi-icon">
 																				<i class="flaticon2-delete"></i>
 																			</span>
                                                                         <span class="navi-text">Remove</span>
+                                                                    </a>-->
+                                                                    <a href="/boards/{{ proj.project.id }}">
+                                                                        <span class="navi-icon">
+                                                                            <i class="flaticon2-delete"></i>
+                                                                        </span>
+                                                                        <span class="navi-text">View Tasks</span>
                                                                     </a>
                                                                 </li>
                                                             </ul>
@@ -364,7 +374,7 @@
                         <!--end::Copyright-->
                         <!--begin::Nav-->
                         <div class="nav nav-dark order-1 order-md-2">
-                            <span class="nav-link pl-3 pr-0">"હિંમત રાખો બધુ સારુ થશે"...સુરી રામ</span>
+                            <span class="nav-link pl-3 pr-0">"હિંમત રાખો બધુ સારુ થશે"... સુરિરામ</span>
                             <span class="nav-link pl-3 pr-0">Contact @9326505690</span>
                         </div>
                         <!--end::Nav-->
@@ -382,9 +392,9 @@
     <div id="kt_quick_user" class="offcanvas offcanvas-right p-10">
         <!--begin::Header-->
         <div class="offcanvas-header d-flex align-items-center justify-content-between pb-5">
-            <h3 class="font-weight-bold m-0">User Profile
+            <h3 class="font-weight-bold m-0">Volunteer Profile
                 <small class="text-muted font-size-sm ml-2"></small></h3>
-            <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_user_close">
+            <a href="#" class="btn btn-xs btn-icon btn-dark btn-hover-primary" id="kt_quick_user_close">
                 <i class="ki ki-close icon-xs text-muted"></i>
             </a>
         </div>
@@ -456,8 +466,9 @@
                             </div>
                         </div>
                         <div class="navi-text">
-                            <div class="font-weight-bold">My Profile</div>
-                            <div class="text-muted">Account settings and more</div>
+                            <div class="font-weight-bold">My Report</div>
+                            <div class="text-muted">Your Status in Projects</div>
+                            <div class=" text-muted">In Progress</div>
                         </div>
                     </div>
                 </a>
@@ -485,8 +496,9 @@
                             </div>
                         </div>
                         <div class="navi-text">
-                            <div class="font-weight-bold">My Tasks</div>
+                            <div class="font-weight-bold">TaskList</div>
                             <div class="text-muted">latest tasks</div>
+                            <div class="text-muted">In Progress</div>
                         </div>
                     </div>
                 </a>
